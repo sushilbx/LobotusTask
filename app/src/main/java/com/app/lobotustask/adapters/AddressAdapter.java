@@ -8,13 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.app.lobotustask.MainActivity;
 import com.app.lobotustask.R;
+import com.app.lobotustask.ScreenTwoActivity;
 import com.app.lobotustask.databinding.AddressItemBinding;
 import com.app.lobotustask.models.AddressModel;
-import com.bumptech.glide.Glide;
-import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -30,8 +27,7 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.MyViewHo
     @Override
     public AddressAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.address_item, parent, false);
-        return new AddressAdapter.MyViewHolder(AddressItemBinding.inflate(LayoutInflater.from(parent.getContext()),
-                parent, false));
+        return new AddressAdapter.MyViewHolder(AddressItemBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
     }
 
     @Override
@@ -46,7 +42,7 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.MyViewHo
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, MainActivity.class);
+                Intent intent = new Intent(context, ScreenTwoActivity.class);
                 context.startActivity(intent);
             }
         });
