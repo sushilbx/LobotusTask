@@ -16,11 +16,18 @@ ActivityScreenTwoBinding b;
         b = ActivityScreenTwoBinding.inflate(getLayoutInflater());
         View view = b.getRoot();
         setContentView(view);
-      b.svSearch.setOnClickListener(new View.OnClickListener() {
+      b.mcClient1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 BottomFragment.newInstance("","").show(
-                        (ScreenTwoActivity.this).getSupportFragmentManager(), "remove_cart_fragment");
+                        (ScreenTwoActivity.this).getSupportFragmentManager(), "fragment");
+            }
+        });
+        b.mcClient2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BottomFragment.newInstance("","").show(
+                        (ScreenTwoActivity.this).getSupportFragmentManager(), "fragment");
             }
         });
 
