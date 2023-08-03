@@ -15,6 +15,9 @@
         android:theme="@style/Theme.LobotusTask"
         tools:targetApi="31">
         <activity
+            android:name=".ScreenThreeActivity"
+            android:exported="false" />
+        <activity
             android:name=".ScreenTwoActivity"
             android:exported="false" />
         <activity
@@ -30,7 +33,7 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.LobotusTask"></activity>
+            android:theme="@style/Theme.LobotusTask" />
     </application>
 
 </manifest>

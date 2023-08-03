@@ -2,6 +2,7 @@ package com.app.lobotustask;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -28,7 +29,13 @@ public class ScreenOneActivity extends AppCompatActivity {
         b = ActivityScreenOneBinding.inflate(getLayoutInflater());
         View view = b.getRoot();
         setContentView(view);
-       b.svSearch.setQueryHint("Search ...");
+        b.svSearch.setQueryHint("Search ...");
+        b.fbCompany.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ScreenOneActivity.this, ScreenThreeActivity.class));
+            }
+        });
         getLocation();
     }
 
@@ -41,7 +48,7 @@ public class ScreenOneActivity extends AppCompatActivity {
                 b.rlLoading.setVisibility(View.GONE);
                 Log.e("Get Location Response", new Gson().toJson(response.body()));
                 if (response.isSuccessful()) {
-                    AddressAdapter addressAdapter =new AddressAdapter(response.body().result,ScreenOneActivity.this);
+                    AddressAdapter addressAdapter = new AddressAdapter(response.body().result, ScreenOneActivity.this);
                     b.rvAddress.setAdapter(addressAdapter);
                 }
             }

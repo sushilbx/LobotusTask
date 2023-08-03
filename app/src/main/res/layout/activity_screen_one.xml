@@ -98,7 +98,7 @@
 
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-            android:id="@+id/extended_fab"
+            android:id="@+id/fbCompany"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
             android:layout_gravity="bottom|right"
